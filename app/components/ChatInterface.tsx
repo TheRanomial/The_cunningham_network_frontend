@@ -45,9 +45,12 @@ export default function ChatInterface({
     setIsLoading(true);
 
     try {
-      const response = await axios.post("http://localhost:3001/chat", {
-        userInput: input,
-      });
+      const response = await axios.post(
+        "https://the-cunningham-network-backend.onrender.com/chat",
+        {
+          userInput: input,
+        }
+      );
 
       const assistantMessage: Message = {
         role: "assistant",

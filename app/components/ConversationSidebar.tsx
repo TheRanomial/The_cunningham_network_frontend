@@ -38,9 +38,12 @@ export default function ConversationSidebar({
     e.preventDefault();
     console.log("Submitted wallet key:", walletKey);
     try {
-      const response = await axios.post("http://localhost:3001/init", {
-        walletKey: walletKey,
-      });
+      const response = await axios.post(
+        "https://the-cunningham-network-backend.onrender.com/init",
+        {
+          walletKey: walletKey,
+        }
+      );
       console.log(response);
     } catch (error) {
       console.error("Error:", error);
